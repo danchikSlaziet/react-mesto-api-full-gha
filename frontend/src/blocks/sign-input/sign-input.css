@@ -1,0 +1,38 @@
+.sign-input {
+  padding: 0 0 8px 0;
+  border: none;
+  border-bottom: 2px solid #CCCCCC;
+  font-family: 'Inter';
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #FFFFFF;
+  background-color: transparent;
+}
+
+.sign-input:-webkit-autofill, .sign-input:focus:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 100px black inset;
+  -webkit-text-fill-color: #CCCCCC;
+}
+
+.sign-input::placeholder {
+  font-family: 'Inter';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #CCCCCC;
+}
+
+.sign-input:not(:last-of-type) {
+  margin-bottom: 30px;
+}
+
+.sign-input:last-of-type {
+  margin-bottom: 216px;
+}
+
+@media (max-width: 500px) {
+  .sign-input:last-of-type {
+    margin-bottom: 173px;
+  }
+}

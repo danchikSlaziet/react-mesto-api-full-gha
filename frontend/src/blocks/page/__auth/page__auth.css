@@ -1,0 +1,9 @@
+.page__auth {
+  margin: 60px auto 0 auto;
+}
+
+@media (max-width: 500px) {
+  .page__auth {
+    margin-top: 0;
+  }
+}

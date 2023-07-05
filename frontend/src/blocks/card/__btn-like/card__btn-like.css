@@ -1,0 +1,22 @@
+.card__btn-like {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  width: 22px;
+  height: 19px;
+  background-image: url(../../../images/card__like.svg);
+  background-size: 100%;
+  background-position: center center;
+}
+
+.card__btn-like:hover {
+  cursor: pointer;
+  opacity: .5;
+}
+
+.card__btn-like:active {
+  background-image: url(../../../images/Union.svg);
+  opacity: 1;
+}
+
+/* атрибут disabled чере js вставится в кнопку card__btn-like */

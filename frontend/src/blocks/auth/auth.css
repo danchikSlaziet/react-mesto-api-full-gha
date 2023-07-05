@@ -1,0 +1,11 @@
+.auth {
+  box-sizing: border-box;
+  width: 68.75%;
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+  .auth {
+    width: 81.25%;
+  }
+}

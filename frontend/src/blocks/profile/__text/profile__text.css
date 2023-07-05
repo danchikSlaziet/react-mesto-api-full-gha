@@ -1,0 +1,28 @@
+.profile__text {
+  max-width: 294px;
+  word-wrap: break-word;
+}
+
+@media screen and (max-width: 930px) {
+  .profile__text {
+    max-width: 270px;
+  }
+}
+
+@media screen and (max-width: 798px) {
+  .profile__text {
+    max-width: 350px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .profile__text {
+    max-width: 270px;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .profile__text {
+    max-width: 189px;
+  }
+}

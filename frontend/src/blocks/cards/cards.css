@@ -1,0 +1,21 @@
+.cards {
+  max-width: 880px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 282px);
+  justify-content: center;
+  row-gap: 20px;
+  column-gap: 17px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1024px) {
+  .cards {
+    width: 68.75%;
+  }
+}
+
+@media screen and (max-width: 845px) {
+  .cards {
+    width: 88.125%;
+  }
+}

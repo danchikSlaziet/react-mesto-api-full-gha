@@ -1,0 +1,31 @@
+.avatar-btn {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  position: relative;
+  margin-right: 30px;
+  border-radius: 100%;
+}
+
+.avatar-btn:after {
+  position: absolute;
+  content: '';
+  top: -1px;
+  right: -1px;
+  left: -1px;
+  bottom: -1px;
+}
+
+.avatar-btn:hover:after {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.8);
+  background-image: url(../../images/Vector.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 798px) {
+  .avatar-btn {
+    margin-right: 0;
+  }
+}

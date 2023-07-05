@@ -1,0 +1,12 @@
+/* каюсь, не по БЭМ написал */
+.burger-button_active div:first-child {
+  transform:translateY(9px) rotate(45deg);
+}
+
+.burger-button_active div:nth-of-type(2) {
+  display: none;
+}
+
+.burger-button_active div:nth-of-type(3){
+  transform: rotate(-45deg);
+}

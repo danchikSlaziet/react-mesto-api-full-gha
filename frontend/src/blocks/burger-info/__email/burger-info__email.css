@@ -1,0 +1,16 @@
+.burger-info__email {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: right;
+  color: #FFFFFF;
+  margin: 0 24px 0 auto;
+  padding-top: 7px;
+}
+
+@media screen and (max-width: 500px) {
+  .burger-info__email {
+    padding-top: 0;
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,18 @@
+.burger-button {
+  position: absolute;
+  right: 30px;
+  top: 6px;
+  display: none;
+  transition: opacity .2s linear;
+}
+
+.burger-button:hover {
+  cursor: pointer;
+  opacity: .6;
+}
+
+@media screen and (max-width: 500px) {
+  .burger-button {
+    display: block;
+  }
+}

@@ -1,0 +1,9 @@
+.popup__close-icon {
+  width: 100%;
+  transition: opacity .2s linear;
+}
+
+.popup__close-icon:hover {
+  cursor: pointer;
+  opacity: .6;
+}

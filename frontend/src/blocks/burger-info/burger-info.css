@@ -1,0 +1,15 @@
+.burger-info {
+  display: flex;
+}
+
+@media screen and (max-width: 500px) {
+  .burger-info {
+    flex-direction: column;
+    position: absolute;
+    z-index: 100;
+    top: -125px;
+    left:50%;
+    transform:translate( -50%);
+    gap: 18px;
+  }
+}

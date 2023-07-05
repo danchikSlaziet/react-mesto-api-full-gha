@@ -1,0 +1,20 @@
+.form__input-error {
+  font-size: 12px;
+  line-height: 15px;
+  color: #FF0000;
+  min-height: 30px;
+  visibility: hidden;
+}
+
+.form__input-error:last-of-type {
+  margin-bottom: 13px;
+}
+
+@media screen and (max-width: 484px) {
+  .form__input-error:first-of-type {
+    margin-bottom: 5px;
+  }
+  .form__input-error:last-of-type {
+    margin-bottom: 5px;
+  }
+}

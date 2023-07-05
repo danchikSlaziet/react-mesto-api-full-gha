@@ -1,0 +1,11 @@
+.burger-button__line {
+  position: relative;
+  width: 24px;
+  height: 3px;
+  background-color: #FFF;
+  transition: transform .2s linear;
+}
+
+.burger-button__line:not(:last-of-type) {
+  margin-bottom: 6px;
+}
