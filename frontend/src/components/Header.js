@@ -2,12 +2,17 @@ import { Link } from 'react-router-dom';
 import logoPath from '../images/logo.svg';
 import BurgerMenu from './BurgerMenu';
 import { useRef, useState } from 'react';
+import authApi from '../utils/auth';
 
 function Header({children, pathName, handleLogin, userEmail, loggedIn, mainRef, footerRef}) {
   function handleClick() {
     if (loggedIn) {
+      authApi.clearCookie()
+        .then((data) => {
+          console.log(data);
+        })
+        .catch((err) => console.log(err))
       handleLogin();
-      localStorage.removeItem('jwt');
       handleBurger();
     }
   };

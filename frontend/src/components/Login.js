@@ -5,15 +5,9 @@ export default function Login({ apiToken, apiLogin }) {
   const [formValue, setFormValue] = useState({email: '', password: ''});
   const {email, password} = formValue;
 
-  const tokenCheck = () => {
-    const jwt = localStorage.getItem('jwt');
-    if (jwt) {
-      apiToken(jwt);
-    }
-  }
-
   useEffect( () => {
-    tokenCheck();
+      apiToken();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleSubmit = (evt) => {

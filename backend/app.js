@@ -7,6 +7,7 @@ const cardRouter = require('./routes/cards');
 const { login, createUser } = require('./controllers/users');
 const auth = require('./middlewares/auth');
 const Error404 = require('./errors/Error404');
+const cors = require('cors');
 
 const { PORT = 3000 } = process.env;
 const app = express();
@@ -17,6 +18,8 @@ mongoose.connect('mongodb://127.0.0.1:27017/mestodb')
 
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors({ origin: 'http://localhost:3001', credentials: true }));
+
 app.post('/signin', celebrate({
   body: Joi.object().keys({
     email: Joi.string().required().email(),
@@ -32,8 +35,12 @@ app.post('/signup', celebrate({
     avatar: Joi.string().pattern(/^((ftp|http|https):\/\/)?(www\.)?([A-Za-zА-Яа-я0-9]{1}[A-Za-zА-Яа-я0-9-]*\.?)*\.{1}[A-Za-zА-Яа-я0-9-]{2,8}(\/([\w#!:.?+=&%@!\-/])*)?/),
   }),
 }), createUser);
-app.use(auth);
+app.get('/signout', (req, res) => {
+  res.clearCookie('jwt', { httpOnly: true });
+  res.status(200).json({ message: 'кука удалена' });
+});
 
+app.use(auth);
 app.use('/users', userRouter);
 app.use('/', cardRouter);
 app.use('/*', (req, res, next) => {

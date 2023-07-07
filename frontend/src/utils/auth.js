@@ -23,6 +23,7 @@ class AuthApi {
       headers: {
         "Content-Type": "application/json"
       },
+      credentials: 'include',
       body: JSON.stringify({
         'password': password,
         'email': email
@@ -38,6 +39,7 @@ class AuthApi {
       headers: {
         "Content-Type": "application/json"
       },
+      credentials: 'include',
       body: JSON.stringify({
         'password': password,
         'email': email
@@ -46,14 +48,26 @@ class AuthApi {
     return this._getFetch(url, options);
   }
 
-  checkToken(jwt) {
+  checkToken() {
     const url = this._baseUrl + '/users/me';
     const options = {
       method: 'GET',
       headers: {
-        "Content-Type": "application/json",
-        "Authorization" : `Bearer ${jwt}`
-      }
+        "Content-Type": "application/json"
+      },
+      credentials: 'include',
+    }
+    return this._getFetch(url, options);
+  }
+
+  clearCookie() {
+    const url = this._baseUrl + '/signout';
+    const options = {
+      method: 'GET',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      credentials: 'include',
     }
     return this._getFetch(url, options);
   }
@@ -61,6 +75,6 @@ class AuthApi {
 }
 
 const authApi = new AuthApi({
-  baseUrl: 'https://auth.nomoreparties.co'
+  baseUrl: 'http://localhost:3000'
 });
 export default authApi;

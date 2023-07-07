@@ -18,7 +18,8 @@ class Api {
     const url = this._baseUrl + 'users/me';
     const options = {
       method: 'GET',
-      headers: this._headers
+      headers: this._headers,
+      credentials: 'include',
     }
     return this._getFetch(url, options);
   }
@@ -27,7 +28,8 @@ class Api {
     const url = this._baseUrl + 'cards';
     const options = {
       method: 'GET',
-      headers: this._headers
+      headers: this._headers,
+      credentials: 'include',
     }
     return this._getFetch(url, options);
   }
@@ -37,6 +39,7 @@ class Api {
     const options = {
       method: 'PATCH',
       headers: this._headers,
+      credentials: 'include',
       body: JSON.stringify({
         name: profileName,
         about: profileJob
@@ -50,6 +53,7 @@ class Api {
     const options = {
       method: 'POST',
       headers: this._headers,
+      credentials: 'include',
       body: JSON.stringify({
         name: place,
         link: link
@@ -62,7 +66,8 @@ class Api {
     const url = this._baseUrl + 'cards/' + id;
     const options = {
       method: 'DELETE',
-      headers: this._headers
+      headers: this._headers,
+      credentials: 'include',
     }
     return this._getFetch(url, options);
   };
@@ -71,7 +76,8 @@ class Api {
     const url = this._baseUrl + 'cards/' + id + '/likes';
     const options = {
       method: 'PUT',
-      headers: this._headers
+      headers: this._headers,
+      credentials: 'include',
     }
     return this._getFetch(url, options);
   };
@@ -80,7 +86,8 @@ class Api {
     const url = this._baseUrl + 'cards/' + id + '/likes';
     const options = {
       method: 'DELETE',
-      headers: this._headers
+      headers: this._headers,
+      credentials: 'include',
     }
     return this._getFetch(url, options);
   };
@@ -98,6 +105,7 @@ class Api {
     const options = {
       method: 'PATCH',
       headers: this._headers,
+      credentials: 'include',
       body: JSON.stringify({
         avatar: link
       })
@@ -107,9 +115,8 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-63/',
+  baseUrl: 'http://localhost:3000/',
   headers: {
-    authorization: '3b0f9781-3d6e-4778-b136-c77e50919461',
     'Content-Type': 'application/json'
   }
 });
