@@ -41,7 +41,6 @@ function App() {
 
   const [cards, setCards] = useState([]);
   useEffect(() => {
-    if (loggedIn) {
       api.getInfoAboutMe()
       .then((aboutMeData) => {
         setCurrentUser({name: aboutMeData.name, about: aboutMeData.about, avatar: aboutMeData.avatar, id: aboutMeData._id})
@@ -52,7 +51,6 @@ function App() {
         setCards(cardsData.data.reverse());
       })
       .catch(err => console.log(err));
-    }
   }, []);
 
   function handleCardLike(card) {
