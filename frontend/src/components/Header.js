@@ -11,11 +11,11 @@ function Header({children, pathName, handleLogin, userEmail, loggedIn, mainRef, 
       authApi.clearCookie()
         .then((data) => {
           console.log(data);
+          handleLogin();
+          handleBurger();
           navigate("/sign-in");
         })
         .catch((err) => console.log(err))
-      handleLogin();
-      handleBurger();
     }
   };
   const headerRef = useRef();
