@@ -51,7 +51,7 @@ function App() {
         setCards(cardsData.data.reverse());
       })
       .catch(err => console.log(err));
-  }, []);
+  }, [loggedIn, currentUser.name, currentUser.about, currentUser.avatar]);
 
   function handleCardLike(card) {
     const isLiked = card.likes.some(i => i === currentUser.id);
