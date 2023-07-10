@@ -11,7 +11,7 @@ function Header({children, pathName, handleLogin, userEmail, loggedIn, mainRef, 
       authApi.clearCookie()
         .then((data) => {
           console.log(data);
-          navigate("/");
+          navigate("/sign-in");
         })
         .catch((err) => console.log(err))
       handleLogin();
