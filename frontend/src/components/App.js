@@ -53,7 +53,7 @@ function App() {
       })
       .catch(err => console.log(err));
     }
-  }, [loggedIn, currentUser.name, currentUser.about, currentUser.avatar]);
+  }, [loggedIn]);
 
   function handleCardLike(card) {
     const isLiked = card.likes.some(i => i === currentUser.id);
