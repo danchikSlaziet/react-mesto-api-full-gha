@@ -35,6 +35,8 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [userEmail, setUserEmail] = useState('');
 
+  const navigate = useNavigate();
+
   function handleLogin() {
     setLoggedIn(!loggedIn);
   };
@@ -45,12 +47,18 @@ function App() {
       .then((aboutMeData) => {
         setCurrentUser({name: aboutMeData.name, about: aboutMeData.about, avatar: aboutMeData.avatar, id: aboutMeData._id})
       })
-      .catch(err => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        navigate('/sign-in');
+      });
     api.getInitialCards()
       .then((cardsData) => {
         setCards(cardsData.data.reverse());
       })
-      .catch(err => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        navigate('/sign-in');
+      });
   }, [loggedIn, currentUser.name, currentUser.about, currentUser.avatar]);
 
   function handleCardLike(card) {
@@ -109,7 +117,7 @@ function App() {
     setIsToolTipInfo({...isToolTipInfo, isOpen: false});
     setSelectedCard({isOpen: false, link: '', place: ''});
   }
-  const navigate = useNavigate();
+
   function apiToken() {
     authApi.checkToken()
       .then((data) => {
