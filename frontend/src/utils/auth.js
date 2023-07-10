@@ -75,6 +75,6 @@ class AuthApi {
 }
 
 const authApi = new AuthApi({
-  baseUrl: 'http://localhost:3000'
+  baseUrl: 'http://localhost:80'
 });
 export default authApi;
