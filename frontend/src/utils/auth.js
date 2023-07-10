@@ -75,6 +75,6 @@ class AuthApi {
 }
 
 const authApi = new AuthApi({
-  baseUrl: 'http://localhost:3000'
+  baseUrl: 'https://api.mesto.social.nomoredomains.work/'
 });
 export default authApi;

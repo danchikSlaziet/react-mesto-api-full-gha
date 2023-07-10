@@ -6,8 +6,8 @@ const userRouter = require('./routes/users');
 const cardRouter = require('./routes/cards');
 const { login, createUser } = require('./controllers/users');
 const auth = require('./middlewares/auth');
+const { requestLogger, errorLogger } = require('./middlewares/logger');
 const Error404 = require('./errors/Error404');
-const cors = require('cors');
 
 const { PORT = 3000 } = process.env;
 const app = express();
@@ -18,7 +18,8 @@ mongoose.connect('mongodb://127.0.0.1:27017/mestodb')
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ origin: 'http://localhost:3001', credentials: true }));
+
+app.use(requestLogger);
 
 app.post('/signin', celebrate({
   body: Joi.object().keys({
@@ -46,6 +47,7 @@ app.use('/', cardRouter);
 app.use('/*', (req, res, next) => {
   next(new Error404('Кривой маршрут, прочитайте документацию к API'));
 });
+app.use(errorLogger);
 app.use(errors());
 app.use((err, req, res, next) => {
   if (err.code === 11000) {
