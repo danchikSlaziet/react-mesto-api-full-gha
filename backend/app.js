@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const { errors, celebrate, Joi } = require('celebrate');
 const cookieParser = require('cookie-parser');
 const userRouter = require('./routes/users');
@@ -7,6 +8,7 @@ const cardRouter = require('./routes/cards');
 const { login, createUser } = require('./controllers/users');
 const auth = require('./middlewares/auth');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+
 const Error404 = require('./errors/Error404');
 
 const { PORT = 3000 } = process.env;
@@ -18,6 +20,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/mestodb')
 
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors({ origin: 'https://mesto.social.nomoredomains.work', credentials: true }));
 
 app.use(requestLogger);
 
