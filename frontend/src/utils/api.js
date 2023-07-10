@@ -115,7 +115,7 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'https://localhost:3000/',
+  baseUrl: 'https://api.mesto.social.nomoredomains.work/',
   headers: {
     'Content-Type': 'application/json'
   }
