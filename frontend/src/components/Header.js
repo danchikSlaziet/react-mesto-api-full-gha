@@ -13,10 +13,10 @@ function Header({children, pathName, handleLogin, userEmail, loggedIn, mainRef, 
           console.log(data);
           handleLogin();
           handleBurger();
-          navigate("/sign-in");
         })
         .catch((err) => console.log(err))
     }
+    navigate("/sign-in");
   };
   const headerRef = useRef();
   function handleBurger() {
