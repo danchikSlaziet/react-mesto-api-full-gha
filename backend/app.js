@@ -20,7 +20,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/mestodb')
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ origin: 'https://mesto.social.nomoredomains.work', credentials: true }));
+app.use(cors());
 
 app.use(requestLogger);
 
