@@ -2,9 +2,7 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 const Error401 = require('../errors/Error401');
 
-const { JWT_SECRET } = process.env;
-
-const SECRET_KEY_DEV = JWT_SECRET;
+const { NODE_ENV, JWT_SECRET } = process.env;
 
 const auth = (req, res, next) => {
   const { cookie } = req.headers;
@@ -14,7 +12,7 @@ const auth = (req, res, next) => {
   const token = cookie.replace('jwt=', '');
   let payload;
   try {
-    payload = jwt.verify(token, SECRET_KEY_DEV);
+    payload = jwt.verify(token, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret');
     console.log('\x1b[31m%s\x1b[0m', `
       Надо исправить. В продакшне используется тот же
       секретный ключ, что и в режиме разработки.
