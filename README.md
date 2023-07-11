@@ -7,7 +7,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.43.46
+IP 158.160.43.46
 
 Frontend https://mesto.social.nomoredomains.work
 
