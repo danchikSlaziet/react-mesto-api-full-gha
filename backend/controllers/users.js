@@ -4,7 +4,8 @@ const User = require('../models/user');
 require('dotenv').config();
 const Error404 = require('../errors/Error404');
 
-const { NODE_ENV, JWT_SECRET } = process.env;
+// const { NODE_ENV, JWT_SECRET } = process.env;
+// не вышло через переменные окружения сделать
 
 const getYourself = (req, res, next) => {
   User.findById(req.user._id)
@@ -15,7 +16,7 @@ const login = (req, res, next) => {
   const { password, email } = req.body;
   return User.findUserByCredentials(email, password)
     .then((user) => {
-      const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret', { expiresIn: '7d' });
+      const token = jwt.sign({ _id: user._id }, 'dev-secret', { expiresIn: '7d' });
       res.cookie('jwt', token, {
         httpOnly: true,
         sameSite: true,
