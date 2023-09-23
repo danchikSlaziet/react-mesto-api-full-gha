@@ -13,7 +13,7 @@
 git clone git@github.com:danchikSlaziet/react-mesto-api-full-gha.git
 ```
 
-##### Настройка backend-приложения проекта.
+##### Настройка backend-части проекта.
 
 В терминале перейти в директорию backend-приложения проекта.
 
@@ -21,4 +21,26 @@ git clone git@github.com:danchikSlaziet/react-mesto-api-full-gha.git
 cd ./backend/
 ```
 
+проверить адрес фронта в app.js (для cors)
+
 запустить backend командой npm run dev или npm run start (в первом случае запуск nodemon)
+
+```
+npm run dev
+```
+
+##### Настройка frontend-части проекта.
+
+В терминале перейти в директорию backend-приложения проекта.
+
+```
+cd ./frontend/
+```
+
+проверить адрес бэкенда в auth.js и api.js
+
+запустить frontend командой:
+
+```
+npm run start
+```
