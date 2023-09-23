@@ -11,7 +11,7 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const Error404 = require('./errors/Error404');
 
-const { PORT = 3000 } = process.env;
+const { PORT = 4000 } = process.env;
 const app = express();
 
 mongoose.connect('mongodb://127.0.0.1:27017/mestodb')
@@ -20,7 +20,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/mestodb')
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ origin: 'https://mesto.social.nomoredomains.work', credentials: true }));
+app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 
 app.use(requestLogger);
 
