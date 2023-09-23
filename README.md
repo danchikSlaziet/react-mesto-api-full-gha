@@ -5,10 +5,20 @@
 
 Адрес репозитория: https://github.com/danchikSlaziet/react-mesto-api-full-gha
 
-## Ссылки на проект
+### Как запустить проект:
 
-IP 158.160.43.46
+##### Клонировать репозиторий:
 
-Frontend https://mesto.social.nomoredomains.work
+```
+git clone git@github.com:danchikSlaziet/react-mesto-api-full-gha.git
+```
 
-Backend https://api.mesto.social.nomoredomains.work
+##### Настройка backend-приложения проекта.
+
+В терминале перейти в директорию backend-приложения проекта.
+
+```
+cd ./backend/
+```
+
+запустить backend командой npm run dev или npm run start (в первом случае запуск nodemon)
