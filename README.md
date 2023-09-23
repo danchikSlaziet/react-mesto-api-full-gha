@@ -50,6 +50,8 @@ cd ./frontend/
 
 проверить адрес бэкенда в auth.js и api.js
 
+установить зависимости
+
 ```
 npm install
 ```
