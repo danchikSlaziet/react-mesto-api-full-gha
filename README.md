@@ -28,6 +28,12 @@ cd ./backend/
 
 проверить адрес фронта в app.js (для cors)
 
+установить зависимости
+
+```
+npm install
+```
+
 запустить backend командой npm run dev или npm run start (в первом случае запуск nodemon)
 
 ```
@@ -43,6 +49,10 @@ cd ./frontend/
 ```
 
 проверить адрес бэкенда в auth.js и api.js
+
+```
+npm install
+```
 
 запустить frontend командой:
 
